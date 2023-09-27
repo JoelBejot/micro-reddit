@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :posts
 
-  validates :email, present: true
-  # validates_format_of :email
-    # :with => /\A(\S+)@(.+)\.(\S+)\z/
-  validates :password, length: { in: 6..20 }
+  validates :email, length: { in: 2..25 }
+  validates :email, format: { with: /\A(\S+)@(.+)\.(\S+)\z/ }
+  validates :email, presence: true
+  validates :email, uniqueness: true
 end
