@@ -1,0 +1,34 @@
+1. user 
+  - email:string [conforms to email format, unique, present]
+  - password:string [6-32 chars, present]
+  - city:string [minimum 2 chars, present]
+  - age:integer [between 13-125, present]
+
+  - has_many posts
+  - has_one state
+  - has_one country
+  - has_one gender
+
+2. post
+  - title:string [optional, max 64 chars]
+  - body:text [min 2 chars]
+
+  - belongs_to user
+  - has_many comments
+
+3. comment
+  - body: text [min 1 char]
+
+  - belongs_to post
+
+4. state
+  - state:string [exactly 2 uppercase letters, present, choose from dropdown menu]
+  - belongs_to user
+
+5. country
+  - country:string [choose from dropdown menu, present]
+  - belongs_to user
+
+6. gender
+  - gender:string [choose from dropdown menu, present]
+  - belongs_to user
