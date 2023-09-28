@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts
+  has_many :comments
 
   validates :email, length: { in: 2..25 }, presence: true, uniqueness: true
   validates :email, format: { with: /\A(\S+)@(.+)\.(\S+)\z/ }
